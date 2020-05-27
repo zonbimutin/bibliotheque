@@ -12,8 +12,16 @@ class BooksController extends AbstractController
      */
     public function index()
     {
+        $books = [];
         return $this->render('books/index.html.twig', [
             'controller_name' => 'BooksController',
+            'livres' => $books,
         ]);
     }
+
+    # TODO DELETE BOOK
+
+    # TODO EDIT BOOK
+
+    # TODO CREATE BOOK
 }

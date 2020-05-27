@@ -7,13 +7,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
+
     /**
      * @Route("/", name="main")
      */
     public function index()
     {
+        $bibliotheques =  [];
+
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
+            'bibliotheques' => $bibliotheques,
         ]);
     }
 }
