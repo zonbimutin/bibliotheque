@@ -17,6 +17,10 @@ class AuteursType extends AbstractType
             ->add('firstName')
             ->add('name')
             ->add('age')
+            ->add('ami', EntityType::class, [
+                'class' => Auteurs::class, 
+                'choice_label' => 'name'
+            ])
         ;
     }
 

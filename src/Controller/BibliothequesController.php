@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/bibliotheques")
+ * @Route("/")
  */
 class BibliothequesController extends AbstractController
 {
     /**
-     * @Route("/", name="bibliotheques_index", methods={"GET"})
+     * @Route("/bibliotheques", name="bibliotheques_index", methods={"GET"})
      */
     public function index(BibliothequesRepository $bibliothequesRepository): Response
     {
@@ -26,7 +26,7 @@ class BibliothequesController extends AbstractController
     }
 
     /**
-     * @Route("/admin/new", name="bibliotheques_new", methods={"GET","POST"})
+     * @Route("/admin/bibliotheques/new", name="bibliotheques_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -50,7 +50,7 @@ class BibliothequesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="bibliotheques_show", methods={"GET"})
+     * @Route("/bibliotheques/{id}", name="bibliotheques_show", methods={"GET"})
      */
     public function show(Bibliotheques $bibliotheque): Response
     {
@@ -60,7 +60,7 @@ class BibliothequesController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}/edit", name="bibliotheques_edit", methods={"GET","POST"})
+     * @Route("/admin/bibliotheques/{id}/edit", name="bibliotheques_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Bibliotheques $bibliotheque): Response
     {
@@ -81,7 +81,7 @@ class BibliothequesController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}", name="bibliotheques_delete", methods={"DELETE"})
+     * @Route("/admin/bibliotheques/{id}", name="bibliotheques_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Bibliotheques $bibliotheque): Response
     {

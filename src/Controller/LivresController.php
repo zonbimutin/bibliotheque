@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/livres")
+ * @Route("/")
  */
 class LivresController extends AbstractController
 {
     /**
-     * @Route("/", name="livres_index", methods={"GET"})
+     * @Route("/livres", name="livres_index", methods={"GET"})
      */
     public function index(LivresRepository $livresRepository): Response
     {
@@ -26,7 +26,7 @@ class LivresController extends AbstractController
     }
 
     /**
-     * @Route("/admin/new", name="livres_new", methods={"GET","POST"})
+     * @Route("/admin/livres/new", name="livres_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -49,7 +49,7 @@ class LivresController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="livres_show", methods={"GET"})
+     * @Route("/livres/{id}", name="livres_show", methods={"GET"})
      */
     public function show(Livres $livre): Response
     {
@@ -59,7 +59,7 @@ class LivresController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}/edit", name="livres_edit", methods={"GET","POST"})
+     * @Route("/admin/livres/{id}/edit", name="livres_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Livres $livre): Response
     {
@@ -79,7 +79,7 @@ class LivresController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}", name="livres_delete", methods={"DELETE"})
+     * @Route("/admin/livres/{id}", name="livres_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Livres $livre): Response
     {

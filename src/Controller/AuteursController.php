@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/auteurs")
+ * @Route("/")
  */
 class AuteursController extends AbstractController
 {
     /**
-     * @Route("/", name="auteurs_index", methods={"GET"})
+     * @Route("/auteurs", name="auteurs_index", methods={"GET"})
      */
     public function index(AuteursRepository $auteursRepository): Response
     {
@@ -27,7 +27,7 @@ class AuteursController extends AbstractController
     }
 
     /**
-     * @Route("/admin/new", name="auteurs_new", methods={"GET","POST"})
+     * @Route("/admin/auteurs/new", name="auteurs_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -50,7 +50,7 @@ class AuteursController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="auteurs_show", methods={"GET"})
+     * @Route("/auteurs/{id}", name="auteurs_show", methods={"GET"})
      */
     public function show(Auteurs $auteur): Response
     {
@@ -60,7 +60,7 @@ class AuteursController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}/edit", name="auteurs_edit", methods={"GET","POST"})
+     * @Route("/admin/auteurs/{id}/edit", name="auteurs_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Auteurs $auteur): Response
     {
@@ -80,7 +80,7 @@ class AuteursController extends AbstractController
     }
 
     /**
-     * @Route("/admin/{id}", name="auteurs_delete", methods={"DELETE"})
+     * @Route("/admin/auteurs/{id}", name="auteurs_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Auteurs $auteur): Response
     {

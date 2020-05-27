@@ -39,6 +39,11 @@ class Auteurs
      */
     private $livres;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Auteurs::class, cascade={"persist", "remove"})
+     */
+    private $ami;
+
     public function __construct()
     {
         $this->livres = new ArrayCollection();
@@ -110,6 +115,18 @@ class Auteurs
             $this->livres->removeElement($livre);
             $livre->removeAuteur($this);
         }
+
+        return $this;
+    }
+
+    public function getAmi(): ?self
+    {
+        return $this->ami;
+    }
+
+    public function setAmi(?self $ami): self
+    {
+        $this->ami = $ami;
 
         return $this;
     }
