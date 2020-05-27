@@ -11,4 +11,16 @@
             {% endfor %}
         </ul>
         {# <a href="{{ path('bibliotheque_add')}}"><button>Ajouter une bibliotheque</button></a> #}
+
+        <h3>Auteurs</h3>
+
+        <ul>
+                {% for auth in randomAuths %}
+                        <a href="#"><li>Nom : {{auth.name}}</li></a>
+                {% else %}
+                        <li>Pas de Auteurs</li>
+                {% endfor %}
+        </ul>
+
+
 {% endblock %}

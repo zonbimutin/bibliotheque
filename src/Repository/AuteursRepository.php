@@ -19,6 +19,27 @@ class AuteursRepository extends ServiceEntityRepository
         parent::__construct($registry, Auteurs::class);
     }
 
+    public function getRandomAuthFromDB()
+    {
+        $total = $this->createQueryBuilder('a')
+            ->select('count(a.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return $total;
+    }
+
+
+    public function findByIdField($id)
+    {
+        return $this->createQueryBuilder('a')
+            ->setParameter('id', $id)
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Auteurs[] Returns an array of Auteurs objects
     //  */
