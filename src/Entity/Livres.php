@@ -99,7 +99,7 @@ class Livres
         return $this->auteurs;
     }
 
-    public function addAuteur(auteurs $auteur): self
+    public function addAuteur(Auteurs $auteur): self
     {
         if (!$this->auteurs->contains($auteur)) {
             $this->auteurs[] = $auteur;
@@ -108,7 +108,7 @@ class Livres
         return $this;
     }
 
-    public function removeAuteur(auteurs $auteur): self
+    public function removeAuteur(Auteurs $auteur): self
     {
         if ($this->auteurs->contains($auteur)) {
             $this->auteurs->removeElement($auteur);
@@ -117,12 +117,12 @@ class Livres
         return $this;
     }
 
-    public function getBibliotheque(): ?bibliotheques
+    public function getBibliotheque(): ?Bibliotheques
     {
         return $this->bibliotheque;
     }
 
-    public function setBibliotheque(?bibliotheques $bibliotheque): self
+    public function setBibliotheque(?Bibliotheques $bibliotheque): self
     {
         $this->bibliotheque = $bibliotheque;
 
