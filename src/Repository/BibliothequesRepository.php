@@ -19,6 +19,17 @@ class BibliothequesRepository extends ServiceEntityRepository
         parent::__construct($registry, Bibliotheques::class);
     }
 
+    public function lastCreated()
+    {
+        return $this->createQueryBuilder('b')
+            ->orderBy('b.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
     // /**
     //  * @return Bibliotheques[] Returns an array of Bibliotheques objects
     //  */

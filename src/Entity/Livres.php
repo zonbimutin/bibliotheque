@@ -92,7 +92,7 @@ class Livres
     }
 
     /**
-     * @return Collection|auteurs[]
+     * @return Collection|Auteurs[]
      */
     public function getAuteurs(): Collection
     {

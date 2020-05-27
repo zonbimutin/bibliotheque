@@ -5,7 +5,7 @@
 {% block body %}
         <ul>
             {% for bibliotheque in bibliotheques %}
-                <a href="{{ path('bibliotheque_view_name', {'name': bibliotheque.name})}}"><li>Nom : {{bibliotheque.name}}</li></a>
+                <a href="{{ path('bibliotheques_show', {'id': bibliotheque.id}) }}"><li>Nom : {{bibliotheque.name}}</li></a>
             {% else %}
                 <li>Pas de bibliothèques</li>
             {% endfor %}
