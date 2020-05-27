@@ -26,7 +26,6 @@ class MainController extends AbstractController
      */
     public function admin(): Response
     {
-        return $this->render('admin.html.twig', [
-        ]);
+        return $this->render('admin.html.twig');
     }
 }

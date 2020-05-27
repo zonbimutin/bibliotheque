@@ -3,7 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Livres;
+use App\Entity\Auteurs;
+use App\Entity\Bibliotheques;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,8 +18,15 @@ class LivresType extends AbstractType
             ->add('title')
             ->add('year')
             ->add('pageNum')
-            ->add('auteurs')
-            ->add('bibliotheque')
+            ->add('auteurs', EntityType::class, [
+                'class' => Auteurs::class, 
+                'choice_label' => 'name'
+            ])
+            ->add('bibliotheque', EntityType::class, [
+                'class' => Bibliotheques::class, 
+                'choice_label' => 'name'
+            ])
+
         ;
     }
 
