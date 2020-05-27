@@ -22,7 +22,9 @@
                 <td>{{ bibliotheque.description }}</td>
                 <td>
                     <a href="{{ path('bibliotheques_show', {'id': bibliotheque.id}) }}">Afficher</a>
-                    {# <a href="{{ path('bibliotheques_edit', {'id': bibliotheque.id}) }}">Modifier</a> #}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('bibliotheques_edit', {'id': bibliotheque.id}) }}">Modifier</a> 
+                    {% endif %}   
                 </td>
             </tr>
         {% else %}
@@ -32,6 +34,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    {# <a href="{{ path('bibliotheques_new') }}">Ajouter une bibliothèque</a> #}
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('bibliotheques_new') }}">Ajouter une bibliothèque</a>
+    {% endif %}   
+    
 {% endblock %}
