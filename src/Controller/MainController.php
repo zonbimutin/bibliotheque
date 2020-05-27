@@ -20,4 +20,13 @@ class MainController extends AbstractController
             'bibliotheques' => $bibliotheques,
         ]);
     }
+
+    /**
+     * @Route("/admin", name="admin_index", methods={"GET"})
+     */
+    public function admin(): Response
+    {
+        return $this->render('admin.html.twig', [
+        ]);
+    }
 }
