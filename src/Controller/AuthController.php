@@ -16,4 +16,17 @@ class AuthController extends AbstractController
             'controller_name' => 'AuthController',
         ]);
     }
+
+    /**
+     * @Route("/auth/{id}", name="auth_detail")
+     */
+
+    public function authDetail()
+    {
+        return $this->render('auth/auth_detail.html.twig', [
+            'controller_name' => 'AuthController',
+        ]);
+    }
+
+
 }
