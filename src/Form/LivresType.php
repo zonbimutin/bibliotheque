@@ -18,10 +18,17 @@ class LivresType extends AbstractType
             ->add('title')
             ->add('year')
             ->add('pageNum')
-            ->add('auteurs', EntityType::class, [
-                'class' => Auteurs::class, 
-                'choice_label' => 'name'
-            ])
+            ->add(
+                'auteurs',
+                EntityType::class,
+                [
+                    'class' => Auteurs::class,
+                    'choice_label' => 'name',
+                    'required' => true,
+                    'multiple' => true,
+                    'expanded' => true,
+                ]
+             )
             ->add('bibliotheque', EntityType::class, [
                 'class' => Bibliotheques::class, 
                 'choice_label' => 'name'
