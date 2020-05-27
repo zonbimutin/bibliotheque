@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auteurs index{% endblock %}
+
+{% block body %}
+    <h1>Auteurs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for auteur in auteurs %}
+            <tr>
+                <td>{{ auteur.id }}</td>
+                <td>{{ auteur.firstName }}</td>
+                <td>{{ auteur.name }}</td>
+                <td>{{ auteur.age }}</td>
+                <td>
+                    <a href="{{ path('auteurs_show', {'id': auteur.id}) }}">show</a>
+                    <a href="{{ path('auteurs_edit', {'id': auteur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('auteurs_new') }}">Create new</a>
+{% endblock %}
