@@ -22,6 +22,17 @@
                 <td>{{ auteur.age }}</td>
             </tr>
             <tr>
+                <th>Ami</th>
+                <td>
+                {% if auteur.ami %}
+                    <a href="{{ path('auteurs_show', {'id': auteur.ami.id}) }}">
+                    {{ auteur.ami.firstname }} {{ auteur.ami.name }}
+                    </a>
+                    <br/>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
                 <th>Livres</th>
                 <td>
                 {% for livre in auteur.livres %}
