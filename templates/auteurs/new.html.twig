@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Auteurs{% endblock %}
+{% block title %}Nouvel Auteur{% endblock %}
+{% block nom_page %}Nouvel Auteur{% endblock %}
 
 {% block body %}
-    <h1>Create new Auteurs</h1>
+    {% if is_granted('ROLE_ADMIN') %}
+        {{ include('auteurs/_form.html.twig') }}
+        <a href="{{ path('auteurs_index') }}">back to list</a>
+    {% endif %}
 
-    {{ include('auteurs/_form.html.twig') }}
-
-    <a href="{{ path('auteurs_index') }}">back to list</a>
 {% endblock %}
