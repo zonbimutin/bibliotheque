@@ -25,7 +25,7 @@
     </table>
 
     <a href="{{ path('auteurs_index') }}">retour à la liste</a>
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if app.user %}
         <a href="{{ path('auteurs_edit', {'id': auteur.id}) }}">modifier</a>
         {{ include('auteurs/_delete_form.html.twig') }}
     {% endif %}   

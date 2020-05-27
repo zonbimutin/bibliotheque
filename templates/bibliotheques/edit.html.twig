@@ -5,7 +5,7 @@
 
 
 {% block body %}
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if app.user %}
         {{ include('bibliotheques/_form.html.twig', {'button_label': 'Update'}) }}
 
         <a href="{{ path('bibliotheques_index') }}">retour à la liste</a>

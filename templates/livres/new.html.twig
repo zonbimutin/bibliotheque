@@ -4,7 +4,7 @@
 {% block nom_page %}Nouveau Livre{% endblock %}
 
 {% block body %}
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if app.user %}
         {{ include('livres/_form.html.twig') }}
     {% endif %} 
 
