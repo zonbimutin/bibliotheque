@@ -40,7 +40,7 @@ class Livres
     private $auteurs;
 
     /**
-     * @ORM\ManyToOne(targetEntity=bibliotheques::class, inversedBy="livres")
+     * @ORM\ManyToOne(targetEntity=Bibliotheques::class, inversedBy="livres")
      * @ORM\JoinColumn(nullable=false)
      */
     private $bibliotheque;
