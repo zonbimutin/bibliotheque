@@ -21,6 +21,14 @@
                 <th>Age</th>
                 <td>{{ auteur.age }}</td>
             </tr>
+            <tr>
+                <th>Livres</th>
+                <td>
+                {% for livre in auteur.livres %}
+                    <a href="{{ path('livres_show', {'id': livre.id}) }}">{{ livre.title }}</a><br/>
+                {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 

@@ -27,7 +27,7 @@
                 <th>Livres</th>
                 <td>
                 {% for livre in bibliotheque.livres %}
-                    {{ livre.title }}<br/>
+                    <a href="{{ path('livres_show', {'id': livre.id}) }}">{{ livre.title }}</a><br/>
                 {% endfor %}
                 </td>
             </tr>

@@ -23,6 +23,14 @@
                 <th>Nombre de pages</th>
                 <td>{{ livre.pageNum }}</td>
             </tr>
+            <tr>
+                <th>Auteurs</th>
+                <td>
+                {% for auteur in livre.auteurs %}
+                    <a href="{{ path('auteurs_show', {'id': auteur.id}) }}">{{ auteur.name }}</a><br/>
+                {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
