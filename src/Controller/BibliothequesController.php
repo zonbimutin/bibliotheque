@@ -26,7 +26,7 @@ class BibliothequesController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="bibliotheques_new", methods={"GET","POST"})
+     * @Route("/admin/new", name="bibliotheques_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -59,7 +59,7 @@ class BibliothequesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="bibliotheques_edit", methods={"GET","POST"})
+     * @Route("/admin/{id}/edit", name="bibliotheques_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Bibliotheques $bibliotheque): Response
     {
@@ -79,7 +79,7 @@ class BibliothequesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="bibliotheques_delete", methods={"DELETE"})
+     * @Route("/admin/{id}", name="bibliotheques_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Bibliotheques $bibliotheque): Response
     {

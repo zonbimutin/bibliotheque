@@ -26,7 +26,7 @@ class LivresController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="livres_new", methods={"GET","POST"})
+     * @Route("/admin/new", name="livres_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -59,7 +59,7 @@ class LivresController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="livres_edit", methods={"GET","POST"})
+     * @Route("/admin/{id}/edit", name="livres_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Livres $livre): Response
     {
@@ -79,7 +79,7 @@ class LivresController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="livres_delete", methods={"DELETE"})
+     * @Route("/admin/{id}", name="livres_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Livres $livre): Response
     {
