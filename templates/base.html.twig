@@ -22,7 +22,7 @@
                 <a href="{{ path('app_login') }}"> <button>Connexion/Créer un compte</button> </a>
             {% endif %}
             {% if app.user %}
-                <div class="mb-3">
+                <div class="mb-3" style="color: white">
                     Vous êtes connecté avec le compte:  {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
                 </div>
             {% endif %}
