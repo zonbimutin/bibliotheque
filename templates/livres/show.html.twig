@@ -24,6 +24,23 @@
                 <td>{{ livre.pageNum }}</td>
             </tr>
             <tr>
+                <th>Bibliothèque</th>
+                <td>
+                {% if livre.bibliotheque %}
+                    
+                    <a href="{{ path('bibliotheques_show', {'id': livre.bibliotheque.id}) }}">{{ livre.bibliotheque.name }}</a><br/>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>
+                {% if livre.categorie %}
+                    {{ livre.categorie.name }}
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
                 <th>Auteurs</th>
                 <td>
                 {% for auteur in livre.auteurs %}

@@ -21,17 +21,19 @@
                 <th>Age</th>
                 <td>{{ auteur.age }}</td>
             </tr>
+            {% if auteur.ami %}
             <tr>
                 <th>Ami</th>
                 <td>
-                {% if auteur.ami %}
+                
                     <a href="{{ path('auteurs_show', {'id': auteur.ami.id}) }}">
                     {{ auteur.ami.firstname }} {{ auteur.ami.name }}
                     </a>
                     <br/>
-                {% endif %}
+                
                 </td>
             </tr>
+            {% endif %}
             <tr>
                 <th>Livres</th>
                 <td>

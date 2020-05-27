@@ -15,8 +15,13 @@
                 <th>Nom</th>
                 <td>{{ categorie.title }}</td>
             </tr>
-            </tr>
             <tr>
+                <th>Livres</th>
+                <td>
+                {% for livre in categorie.livres %}
+                    <a href="{{ path('livres_show', {'id': livre.id}) }}">{{ livre.title }}</a><br/>
+                {% endfor %}
+                </td>
             </tr>
         </tbody>
     </table>
