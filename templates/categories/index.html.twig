@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories index{% endblock %}
+{% block nom_page %}Categories Index{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td>{{ categorie.id }}</td>
+                <td>{{ categorie.name }}</td>
+                <td>
+                    <a href="{{ path('categories_show', {'id': categorie.id}) }}">Afficher</a>
+                    {% if app.user %}
+                       <a href="{{ path('categories_edit', {'id': categorie.id}) }}">Modifier</a> 
+                    {% endif %} 
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucune Catégorie trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if app.user %}
+        <a href="{{ path('categories_new') }}">Créer nouvelle Catégorie</a>
+    {% endif %} 
+    
+{% endblock %}

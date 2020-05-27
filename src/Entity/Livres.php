@@ -45,6 +45,11 @@ class Livres
      */
     private $bibliotheque;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Categories::class, inversedBy="livres")
+     */
+    private $categorie;
+
     public function __construct()
     {
         $this->auteurs = new ArrayCollection();
@@ -125,6 +130,18 @@ class Livres
     public function setBibliotheque(?Bibliotheques $bibliotheque): self
     {
         $this->bibliotheque = $bibliotheque;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?Categories
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categories $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }
