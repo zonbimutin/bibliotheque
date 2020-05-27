@@ -35,7 +35,7 @@ class Livres
     private $pageNum;
 
     /**
-     * @ORM\ManyToMany(targetEntity=auteurs::class, inversedBy="livres")
+     * @ORM\ManyToMany(targetEntity=Auteurs::class, inversedBy="livres")
      */
     private $auteurs;
 
