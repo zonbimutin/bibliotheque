@@ -3,6 +3,7 @@
 {% block title %}Accueil{% endblock %}
 {% block nom_page %}Accueil{% endblock %}
 {% block body %}
+    <h3>Bibliotheque</h3>
         <ul>
             {% for bibliotheque in bibliotheques %}
                 <a href="{{ path('bibliotheques_show', {'id': bibliotheque.id}) }}"><li>Nom : {{bibliotheque.name}}</li></a>
@@ -16,7 +17,7 @@
 
         <ul>
                 {% for auth in randomAuths %}
-                        <a href="#"><li>Nom : {{auth.name}}</li></a>
+                        <a href="#"><li>Nom : {{auth}}</li></a>
                 {% else %}
                         <li>Pas de Auteurs</li>
                 {% endfor %}

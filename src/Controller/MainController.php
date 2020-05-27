@@ -25,7 +25,7 @@ class MainController extends AbstractController
         $randomAuths = [];
 
         if ($total > 2) {
-            $randomAuths = array_slice((array)$auths, 0, 3);
+            $randomAuths = array_slice(array($auths), 0, 3);
         }
 
 
