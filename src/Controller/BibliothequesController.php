@@ -31,6 +31,7 @@ class BibliothequesController extends AbstractController
     public function new(Request $request): Response
     {
         $bibliotheque = new Bibliotheques();
+        $bibliotheque->setDate(new \DateTime('now'));
         $form = $this->createForm(BibliothequesType::class, $bibliotheque);
         $form->handleRequest($request);
 
@@ -63,6 +64,7 @@ class BibliothequesController extends AbstractController
      */
     public function edit(Request $request, Bibliotheques $bibliotheque): Response
     {
+        $bibliotheque->setDate(new \DateTime('now'));
         $form = $this->createForm(BibliothequesType::class, $bibliotheque);
         $form->handleRequest($request);
 

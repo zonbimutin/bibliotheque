@@ -39,6 +39,11 @@ class Bibliotheques
      */
     private $livres;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $date;
+
     public function __construct()
     {
         $this->auteurs = new ArrayCollection();
@@ -113,6 +118,18 @@ class Bibliotheques
                 $livre->setBibliotheque(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
