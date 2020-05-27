@@ -49,10 +49,13 @@
                                     <span data-feather="authors"></span>
                                     Auteurs
                                 </a>
-                                <a class="nav-link" href="{{ path('categories_index')}}">
-                                    <span data-feather="categories"></span>
-                                    Catégories
-                                </a>
+                                {% if app.user %}
+                                    <a class="nav-link" href="{{ path('categories_index')}}">
+                                        <span data-feather="categories"></span>
+                                        Catégories
+                                    </a>    
+                                {% endif %}
+                                
                             </li>
                         </ul>
                     </div>
