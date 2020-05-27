@@ -5,10 +5,13 @@
 
 
 {% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+        {{ include('bibliotheques/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('bibliotheques/_form.html.twig', {'button_label': 'Update'}) }}
+        <a href="{{ path('bibliotheques_index') }}">retour à la liste</a>
 
-    <a href="{{ path('bibliotheques_index') }}">retour à la liste</a>
+        {{ include('bibliotheques/_delete_form.html.twig') }}        
+        
+    {% endif %}   
 
-    {{ include('bibliotheques/_delete_form.html.twig') }}
 {% endblock %}

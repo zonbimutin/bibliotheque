@@ -22,7 +22,7 @@
                 <td>{{ bibliotheque.description }}</td>
                 <td>
                     <a href="{{ path('bibliotheques_show', {'id': bibliotheque.id}) }}">Afficher</a>
-                    <a href="{{ path('bibliotheques_edit', {'id': bibliotheque.id}) }}">Modifier</a>
+                    {# <a href="{{ path('bibliotheques_edit', {'id': bibliotheque.id}) }}">Modifier</a> #}
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('bibliotheques_new') }}">Ajouter une bibliothèque</a>
+    {# <a href="{{ path('bibliotheques_new') }}">Ajouter une bibliothèque</a> #}
 {% endblock %}

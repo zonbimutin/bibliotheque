@@ -4,7 +4,10 @@
 {% block nom_page %}Nouvelle bibliothèques{% endblock %}
 
 {% block body %}
-    {{ include('bibliotheques/_form.html.twig') }}
 
-    <a href="{{ path('bibliotheques_index') }}">Retour à la liste</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        {{ include('bibliotheques/_form.html.twig') }}
+        <a href="{{ path('bibliotheques_index') }}">Retour à la liste</a>    
+    {% endif %}   
+    
 {% endblock %}
