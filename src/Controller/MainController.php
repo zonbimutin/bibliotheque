@@ -24,8 +24,9 @@ class MainController extends AbstractController
     /**
      * @Route("/admin", name="admin_index", methods={"GET"})
      */
-    public function admin(): Response
+    public function admin()
     {
-        return $this->render('admin.html.twig');
+        return $this->render('admin.html.twig', [
+        ]);
     }
 }
