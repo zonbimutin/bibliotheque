@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoriesController extends AbstractController
 {
     /**
-     * @Route("/admin/categories", name="categories_index", methods={"GET"})
+     * @Route("/categories", name="categories_index", methods={"GET"})
      */
     public function index(CategoriesRepository $categoriesRepository): Response
     {
@@ -49,7 +49,7 @@ class CategoriesController extends AbstractController
     }
 
     /**
-     * @Route("/admin/categories/{id}", name="categories_show", methods={"GET"})
+     * @Route("/categories/{id}", name="categories_show", methods={"GET"})
      */
     public function show(Categories $category): Response
     {
