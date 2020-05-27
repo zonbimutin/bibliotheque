@@ -3,7 +3,6 @@
 {% block title %}Liste des Auteurs{% endblock %}
 {% block nom_page %}Liste des Auteurs{% endblock %}
 {% block body %}
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <ul>
                 {% for auteur in auteurs %}
                     <a href="{{ path('auteur_view_name', {'name': auteur.name})}}"><li>Nom : {{auteur.name}}</li></a>
@@ -13,6 +12,4 @@
             </ul>
             {# <a href="{{ path('auteur_add')}}"><button>Ajouter un auteur</button></a> #}
             <a href="#"><button>Ajouter un auteur</button></a>
-
-        </main>
 {% endblock %}

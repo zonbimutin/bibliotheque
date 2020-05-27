@@ -14,34 +14,49 @@
     <body>
         <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">{% block nom_page %}{% endblock %}</a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('admin_index') }}"> <button>Page Admin</button> </a>
+            {% endif %}
+            
+            {% if not app.user %}
+                <a href="{{ path('app_login') }}"> <button>Connexion/Créer un compte</button> </a>
+            {% endif %}
+            {% if app.user %}
+                <div class="mb-3">
+                    Vous êtes connecté avec le compte:  {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                </div>
+            {% endif %}
         </nav>
         <div class="container-fluid">
             <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('main')}}">
-                                <span data-feather="main"></span>
-                                Accueil
-                            </a>
-                            <a class="nav-link" href="{{ path('bibliotheques_index')}}">
-                                <span data-feather="bibliotheques"></span>
-                                Bibliothèques
-                            </a>
-                            <a class="nav-link" href="{{ path('livres_index')}}">
-                                <span data-feather="books"></span>
-                                Livres
-                            </a>
-                            <a class="nav-link" href="{{ path('auteurs_index')}}">
-                                <span data-feather="authors"></span>
-                                Auteurs
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-             {% block body %}{% endblock %}
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('index')}}">
+                                    <span data-feather="index"></span>
+                                    Accueil
+                                </a>
+                                <a class="nav-link" href="{{ path('bibliotheques_index')}}">
+                                    <span data-feather="bibliotheques"></span>
+                                    Bibliothèques
+                                </a>
+                                <a class="nav-link" href="{{ path('livres_index')}}">
+                                    <span data-feather="books"></span>
+                                    Livres
+                                </a>
+                                <a class="nav-link" href="{{ path('auteurs_index')}}">
+                                    <span data-feather="authors"></span>
+                                    Auteurs
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    {% block body %}{% endblock %}
+                </main>
             </div>
         </div>
         {% block javascripts %}{% endblock %}

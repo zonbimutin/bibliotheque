@@ -3,15 +3,12 @@
 {% block title %}Accueil{% endblock %}
 {% block nom_page %}Accueil{% endblock %}
 {% block body %}
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <ul>
-                {% for bibliotheque in bibliotheques %}
-                    <a href="{{ path('bibliotheque_view_name', {'name': bibliotheque.name})}}"><li>Nom : {{bibliotheque.name}}</li></a>
-                {% else %}
-                    <li>Pas de bibliothèques</li>
-                {% endfor %}
-            </ul>
-            {# <a href="{{ path('bibliotheque_add')}}"><button>Ajouter une bibliotheque</button></a> #}
-
-        </main>
+        <ul>
+            {% for bibliotheque in bibliotheques %}
+                <a href="{{ path('bibliotheque_view_name', {'name': bibliotheque.name})}}"><li>Nom : {{bibliotheque.name}}</li></a>
+            {% else %}
+                <li>Pas de bibliothèques</li>
+            {% endfor %}
+        </ul>
+        {# <a href="{{ path('bibliotheque_add')}}"><button>Ajouter une bibliotheque</button></a> #}
 {% endblock %}
